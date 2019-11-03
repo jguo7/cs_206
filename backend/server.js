@@ -4,11 +4,8 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const PORT = 4000;
-var User = require('./schema/user.js');
-var Content = require('./schema/comment.js');
 var Influencer = require('./schema/Influencer.js');
 
-var Article = require('./schema/article.js');
 var session = require('express-session');
 var Twitter = require('twitter');
 var twitterBaseApi = 'https://api.twitter.com/1.1/search/tweets.json';
@@ -41,6 +38,7 @@ var client = new Twitter({
 });
 
 app.post('/getTweets', function (req, res) {
+    console.log('in the post!')
     if (req.body.criteria === '') {
         client.get('search/tweets', { q: '' }, function (error, tweets, response) {
             res.status(200).send(tweets)

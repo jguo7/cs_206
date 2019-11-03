@@ -16,6 +16,7 @@
     "express-session": "^1.16.2",
     "fs": "0.0.1-security",
     "mongoose": "^5.7.1",
+    "natural": "^0.6.3",
     "twitter": "^1.7.1",
     "word2vec": "^1.1.4"
   }
